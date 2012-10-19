@@ -14,10 +14,8 @@
 ActiveRecord::Schema.define(:version => 20121019225355) do
 
   create_table "breweries", :force => true do |t|
-    t.string   "name"
-    t.string   "db_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string "name"
+    t.string "db_id"
   end
 
 end

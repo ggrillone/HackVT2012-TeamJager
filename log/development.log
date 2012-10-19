@@ -82,3 +82,86 @@ Served asset /jquery.js - 304 Not Modified (1ms)
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-19 18:58:59 -0400
 Served asset /application.js - 200 OK (3ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (2.9ms)[0m  [1mCOPY breweries(name, db_id) FROM '/Users/gregorygrillone/Documents/HackVT2012-TeamJager/test/data/Breweries.txt' USING DELIMITERS ','[0m
+PG::Error: ERROR:  null value in column "created_at" violates not-null constraint
+CONTEXT:  COPY breweries, line 1: "14th Star Brewing Co,XYOlqp"
+: COPY breweries(name, db_id) FROM '/Users/gregorygrillone/Documents/HackVT2012-TeamJager/test/data/Breweries.txt' USING DELIMITERS ','
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Migrating to CreateBreweries (20121019225355)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (4.3ms)[0m  DROP TABLE "breweries"
+  [1m[36m (0.5ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20121019225355'[0m
+  [1m[35m (1.0ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateBreweries (20121019225355)
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (7.7ms)[0m  [1mCREATE TABLE "breweries" ("id" serial primary key, "name" character varying(255), "db_id" character varying(255)) [0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20121019225355')
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+  [1m[36mPK and serial sequence (1.7ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"breweries"'::regclass
+[0m
+  [1m[35m (1.5ms)[0m   SELECT distinct i.relname, d.indisunique, d.indkey, pg_get_indexdef(d.indexrelid), t.oid
+ FROM pg_class t
+ INNER JOIN pg_index d ON t.oid = d.indrelid
+ INNER JOIN pg_class i ON d.indexrelid = i.oid
+ WHERE i.relkind = 'i'
+ AND d.indisprimary = 'f'
+ AND t.relname = 'breweries'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname = ANY (current_schemas(false)) )
+ ORDER BY i.relname
+
+Connecting to database specified by database.yml
+  [1m[36m (2.3ms)[0m  [1mCOPY breweries(name, db_id) FROM '/Users/gregorygrillone/Documents/HackVT2012-TeamJager/test/data/Breweries.csv' USING DELIMITERS ','[0m
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-19 19:48:37 -0400
+Connecting to database specified by database.yml
+Processing by BreweryController#index as HTML
+  [1m[36mBrewery Load (0.4ms)[0m  [1mSELECT "breweries".* FROM "breweries" [0m
+  Rendered brewery/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 81ms (Views: 37.9ms | ActiveRecord: 13.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-19 19:48:37 -0400
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/brewery.css?body=1" for 127.0.0.1 at 2012-10-19 19:48:37 -0400
+Served asset /brewery.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-19 19:48:37 -0400
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/brewery.js?body=1" for 127.0.0.1 at 2012-10-19 19:48:37 -0400
+Served asset /brewery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-19 19:48:37 -0400
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-19 19:48:37 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
