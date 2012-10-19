@@ -45,3 +45,40 @@ Migrating to CreateBreweries (20121019225355)
  AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname = ANY (current_schemas(false)) )
  ORDER BY i.relname
 [0m
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-19 18:58:59 -0400
+Connecting to database specified by database.yml
+Processing by BreweryController#index as HTML
+  Rendered brewery/index.html.erb within layouts/application (1.7ms)
+Compiled brewery.css  (6ms)  (pid 26899)
+Compiled application.css  (12ms)  (pid 26899)
+Compiled jquery.js  (3ms)  (pid 26899)
+Compiled jquery_ujs.js  (0ms)  (pid 26899)
+Compiled brewery.js  (0ms)  (pid 26899)
+Compiled application.js  (52ms)  (pid 26899)
+Completed 200 OK in 143ms (Views: 142.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-19 18:58:59 -0400
+Served asset /application.css - 200 OK (2ms)
+
+
+Started GET "/assets/brewery.css?body=1" for 127.0.0.1 at 2012-10-19 18:58:59 -0400
+Served asset /brewery.css - 200 OK (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-19 18:58:59 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/brewery.js?body=1" for 127.0.0.1 at 2012-10-19 18:58:59 -0400
+Served asset /brewery.js - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-19 18:58:59 -0400
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-19 18:58:59 -0400
+Served asset /application.js - 200 OK (3ms)
