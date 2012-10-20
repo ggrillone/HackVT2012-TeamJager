@@ -2,10 +2,15 @@
 
 <ul>
 	<% @breweries.each do |brewery| %>
-		<li><%= brewery.name %></li>
+		<li><a href="#" data="<%= brewery.db_id %>"><%= brewery.name %></a></li>
 	<% end %>
 </ul>
 
-<p id="json">
+<div id="loader" style="margin: 50px auto;width:100px;display:none;">
+	<%= image_tag "ajax-loader.gif" %>
+</div>
 
-</p>
+<table id="structure" border="1">
+</table>
+
+<p id="json" style="display:none;"></p>
