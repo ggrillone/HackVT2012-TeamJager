@@ -112,6 +112,10 @@ $(document).ready(function() {
 
 					$("#loader2").hide();
 
+					if(brewery_id == "9s770G") {
+						$(".beer-container").append("<h1 style='text-align:center;'>:(</h1>");
+					}
+
 					var i = 0;
 					// Loops through all beers for a brewery
 					$(json_object["data"]).each(function(index, element) {
