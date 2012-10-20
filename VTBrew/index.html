@@ -114,27 +114,59 @@
 <!--
   Home page
 -->
-<div data-role="page" id="one">
+<div data-role="page" id="home">
 
 	<div data-role="header">
-		<h1>VT Brew Tours</h1>
+		<h1><a href="#home">VT Brew Tours</a></h1>
 
 		<div class="ui-grid-b">
-			<div class="ui-block-a"><a href="#one"><img src="assets/img/breweries_button2.png" /></a></div>
-			<div class="ui-block-b"><a href="#two"><img src="assets/img/beer_button2.png" /></a></div>
-      <div class="ui-block-c"><a href="#two"><img src="assets/img/map_Button.png" /></a></div>
-		</div><!-- /grid-b -->
+      <div class="ui-block-a"><a href="#brewery-list"><img src="assets/img/breweries_button2.png" /></a></div>
+      <div class="ui-block-b"><a href="#beer-list"><img src="assets/img/beer_button2.png" /></a></div>
+      <div class="ui-block-c"><a href="#map"><img src="assets/img/map_Button.png" /></a></div>
+    </div><!-- /grid-b -->
 
 	</div><!-- /header -->
 
 	<div data-role="content" >	
-		<h2>One</h2>
+		<h2>home</h2>
 	</div><!-- /content -->
 	
 	<div data-role="footer">
 		<h4>Page Footer</h4>
 	</div><!-- /footer -->
-</div><!-- /page one -->
+</div><!-- /end home -->
+
+
+
+<!-- 
+   Map page
+
+-->
+<div data-role="page" id="map">
+
+  <div data-role="header">
+    <h1><a href="#home">VT Brew Tours</a></h1>
+
+    <div class="ui-grid-b">
+      <div class="ui-block-a"><a href="#brewery-list"><img src="assets/img/breweries_button2.png" /></a></div>
+      <div class="ui-block-b"><a href="#beer-list"><img src="assets/img/beer_button2.png" /></a></div>
+      <div class="ui-block-c"><a href="#map"><img src="assets/img/map_Button.png" /></a></div>
+    </div><!-- /grid-b -->
+
+  </div><!-- /header -->
+
+  <div data-role="content"> 
+    <h2>map</h2>
+    
+    <div id="map_canvas" style="width:385px; height:655px"></div>
+
+  </div><!-- /content -->
+  
+  <div data-role="footer">
+    <h4>Page Footer</h4>
+  </div><!-- /footer -->
+</div><!-- /end map -->
+
 
 <!--
   Brewery page with brewery select list
@@ -142,10 +174,17 @@
 -->
 <div data-role="page" id="brewery-list">
   <div data-role="header">
+    <h1><a href="#home">VT Brew Tours</a></h1>
+
+    <div class="ui-grid-b">
+      <div class="ui-block-a"><a href="#brewery-list"><img src="assets/img/breweries_button2.png" /></a></div>
+      <div class="ui-block-b"><a href="#beer-list"><img src="assets/img/beer_button2.png" /></a></div>
+      <div class="ui-block-c"><a href="#map"><img src="assets/img/map_Button.png" /></a></div>
+    </div><!-- /grid-b -->
   </div>
 
   <div data-role="content"> 
-    <select id="brewery-list">
+    <select id="brewery-select-list">
       <option value="nil">Select a brewery...</option>
     </select>
   </div>
@@ -153,7 +192,7 @@
   <div data-role="footer">
     <h4>Page Footer</h4>
   </div><!-- /footer -->
-</div>
+</div><!-- end brewery select list -->
 
 <!-- 
   Brewery page that lists individual breweries
@@ -165,15 +204,16 @@
 		<h1>VT Brew Tours</h1>
 
     <div class="ui-grid-b">
-      <div class="ui-block-a"><a href="#one"><img src="assets/img/breweries_button2.png" /></a></div>
-      <div class="ui-block-b"><a href="#two"><img src="assets/img/beer_button2.png" /></a></div>
-      <div class="ui-block-c"><a href="#two"><img src="assets/img/map_Button.png" /></a></div>
+      <!-- new grid here -->
+      <div class="ui-block-a"><a href="#brewery-list"><img src="assets/img/breweries_button2.png" /></a></div>
+      <div class="ui-block-b"><a href="#beer-list"><img src="assets/img/beer_button2.png" /></a></div>
+      <div class="ui-block-c"><a href="#map"><img src="assets/img/map_Button.png" /></a></div>
     </div><!-- /grid-b -->
 
 	</div><!-- /header -->
 
 	<div data-role="content">	
-		<h2>Two</h2>
+		<h2>Breweries</h2>
 		
     <div id="loader" style="margin: 0 auto;width:100px;display:none;">
       <img src="assets/img/ajax-loader.gif">
@@ -194,7 +234,7 @@
 	<div data-role="footer">
 		<h4>Page Footer</h4>
 	</div><!-- /footer -->
-</div><!-- /page two -->
+</div><!-- end brewery page -->
 
 <!--
   Beer page with beer select list
@@ -203,18 +243,25 @@
 -->
 <div data-role="page" id="beer-list">
   <div data-role="header">
+    <h1><a href="#home">Select a Brewery to see their selection</a></h1>
+
+    <div class="ui-grid-b">
+      <div class="ui-block-a"><a href="#brewery-list"><img src="assets/img/breweries_button2.png" /></a></div>
+      <div class="ui-block-b"><a href="#beer-list"><img src="assets/img/beer_button2.png" /></a></div>
+      <div class="ui-block-c"><a href="#map"><img src="assets/img/map_Button.png" /></a></div>
+    </div><!-- /grid-b -->
   </div>
 
   <div data-role="content"> 
     <select>
-      <option value="nil">Select a beer...</option>
+      <option value="nil">Select a brewery to check out their beer...</option>
     </select>
   </div>
 
   <div data-role="footer">
     <h4>Page Footer</h4>
   </div><!-- /footer -->
-</div>
+</div><!-- end beer select list -->
 
 <!--
   Beer page list all beers for
@@ -223,6 +270,13 @@
 -->
 <div data-role="page" id="beers">
   <div data-role="header">
+    <h1>Beers</h1>
+
+    <div class="ui-grid-b">
+      <div class="ui-block-a"><a href="#brewery-list"><img src="assets/img/breweries_button2.png" /></a></div>
+      <div class="ui-block-b"><a href="#beer-list"><img src="assets/img/beer_button2.png" /></a></div>
+      <div class="ui-block-c"><a href="#map"><img src="assets/img/map_Button.png" /></a></div>
+    </div><!-- /grid-b -->
   </div>
 
   <div data-role="content"> 
@@ -231,7 +285,7 @@
   <div data-role="footer">
     <h4>Page Footer</h4>
   </div><!-- /footer -->
-</div>
+</div><!-- end beer page -->
 
 <!-- Start of: #popup 
 <p><a href="#popup" data-role="button" data-rel="dialog" data-transition="pop">Show page "popup" (as a dialog)</a></p>

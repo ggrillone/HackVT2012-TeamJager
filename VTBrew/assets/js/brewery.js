@@ -21,7 +21,7 @@ $(document).ready(function() {
 	$.each(brewery_names, function(i, val) {
 		var option = "<option value='#breweries."+brewery_ids[i]+"'>" + val + "</option>";
 
-		$("#brewery-list").append(option);
+		$("#brewery-select-list").append(option);
 	});
 
 	/*
