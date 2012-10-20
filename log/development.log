@@ -165,3 +165,167 @@ Served asset /application.js - 304 Not Modified (3ms)
 
 Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-19 19:48:37 -0400
 Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-19 20:36:59 -0400
+Connecting to database specified by database.yml
+Processing by BreweryController#index as HTML
+  [1m[36mBrewery Load (0.9ms)[0m  [1mSELECT "breweries".* FROM "breweries" [0m
+  Rendered brewery/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 57ms (Views: 20.2ms | ActiveRecord: 9.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-19 20:36:59 -0400
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/brewery.css?body=1" for 127.0.0.1 at 2012-10-19 20:36:59 -0400
+Served asset /brewery.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-19 20:36:59 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/brewery.js?body=1" for 127.0.0.1 at 2012-10-19 20:36:59 -0400
+Served asset /brewery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-19 20:36:59 -0400
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-19 20:36:59 -0400
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-19 20:40:59 -0400
+Processing by BreweryController#index as HTML
+Completed 500 Internal Server Error in 0ms
+
+JSON::ParserError (757: unexpected token at 'http://api.brewerydb.com/v2/brewery/qIqpZc/beers/?key=75c487072c38fac9621fac0f4db26ca1'):
+  app/controllers/brewery_controller.rb:4:in `index'
+
+
+  Rendered /Users/gregorygrillone/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+  Rendered /Users/gregorygrillone/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/gregorygrillone/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-19 20:41:23 -0400
+Processing by BreweryController#index as HTML
+Completed 500 Internal Server Error in 4ms
+
+JSON::ParserError (757: unexpected token at 'http://api.brewerydb.com/v2/brewery/qIqpZc/beers/?key=75c487072c38fac9621fac0f4db26ca1'):
+  app/controllers/brewery_controller.rb:6:in `index'
+
+
+  Rendered /Users/gregorygrillone/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+  Rendered /Users/gregorygrillone/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /Users/gregorygrillone/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-19 20:41:24 -0400
+Processing by BreweryController#index as HTML
+Completed 500 Internal Server Error in 1ms
+
+JSON::ParserError (757: unexpected token at 'http://api.brewerydb.com/v2/brewery/qIqpZc/beers/?key=75c487072c38fac9621fac0f4db26ca1'):
+  app/controllers/brewery_controller.rb:6:in `index'
+
+
+  Rendered /Users/gregorygrillone/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+  Rendered /Users/gregorygrillone/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /Users/gregorygrillone/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-19 20:41:36 -0400
+Processing by BreweryController#index as HTML
+  [1m[35mBrewery Load (0.2ms)[0m  SELECT "breweries".* FROM "breweries" 
+  Rendered brewery/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 28ms (Views: 20.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-19 20:41:36 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/brewery.css?body=1" for 127.0.0.1 at 2012-10-19 20:41:36 -0400
+Served asset /brewery.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-19 20:41:36 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/brewery.js?body=1" for 127.0.0.1 at 2012-10-19 20:41:36 -0400
+Served asset /brewery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-19 20:41:36 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-19 20:41:36 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-19 20:42:14 -0400
+Processing by BreweryController#index as HTML
+  [1m[36mBrewery Load (0.2ms)[0m  [1mSELECT "breweries".* FROM "breweries" [0m
+  Rendered brewery/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 1481ms (Views: 3.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-19 20:42:16 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/brewery.css?body=1" for 127.0.0.1 at 2012-10-19 20:42:16 -0400
+Served asset /brewery.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-19 20:42:16 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-19 20:42:16 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/brewery.js?body=1" for 127.0.0.1 at 2012-10-19 20:42:16 -0400
+Served asset /brewery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-19 20:42:16 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-19 20:42:27 -0400
+Processing by BreweryController#index as HTML
+  [1m[35mBrewery Load (0.4ms)[0m  SELECT "breweries".* FROM "breweries" 
+  Rendered brewery/index.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 1026ms (Views: 15.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-19 20:42:28 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/brewery.css?body=1" for 127.0.0.1 at 2012-10-19 20:42:28 -0400
+Served asset /brewery.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-19 20:42:28 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-19 20:42:28 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/brewery.js?body=1" for 127.0.0.1 at 2012-10-19 20:42:28 -0400
+Served asset /brewery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-19 20:42:28 -0400
+Served asset /application.js - 304 Not Modified (0ms)

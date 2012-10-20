@@ -1,7 +1,9 @@
 <h1>All Breweries</h1>
 
 <ul>
-	<%= @breweries.each do |brewery| %>
+	<% @breweries.each do |brewery| %>
 		<li><%= brewery.name %></li>
 	<% end %>
 </ul>
+
+<%= @result %>

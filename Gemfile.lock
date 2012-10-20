@@ -97,6 +97,7 @@ PLATFORMS
 
 DEPENDENCIES
   jquery-rails
+  json (~> 1.7.5)
   pg
   rails (= 3.2.6)
   sass-rails (~> 3.2.3)
