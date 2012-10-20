@@ -23,7 +23,7 @@ $(document).ready(function() {
 				// Loops through all beers for a brewery
 				$(json_object["data"]).each(function(index, element) {
 					$.each(element, function(key,value) {
-
+						
 						if(key == "labels" || key == "availableId" || key == "glasswareId"
 							|| key == "name" || key == "id" || key == "description"
 							|| key == "abv") {
