@@ -135,11 +135,11 @@ $(document).ready(function() {
 								}
 								// Availability Yes
 								else if(key == "availableId" && value == "1") {
-									new_beer += "<div class='beer-available'>Available: Yes</div>";
+									new_beer += "<div class='beer-available'>Available: Yes</div><br />";
 								}
 								// Availability No
 								else if(key == "availableId" && value == "2") {
-									new_beer += "<div class='beer-available'>Available: No</div>";
+									new_beer += "<div class='beer-available'>Available: No</div><br />";
 								}
 								// Glassware Flute 1
 								else if(key == "glasswareId" && value == "1") {
@@ -195,10 +195,10 @@ $(document).ready(function() {
 										new_beer += "<div class='beer-abv'>Alcohol By Volume: " + value + "</div>";
 									}
 									else if(key == "description") {
-										new_beer += "<div class='beer-description'>" + value + "</div>";
+										new_beer += "<p><div class='beer-description'>" + value + "</div></p>";
 									}
 									else if(key == "name") {
-										new_beer += "<h1 class='beer-name'>" + value + "</h1>";
+										new_beer += "<p><h1 class='beer-name'>" + value + "</h1></p>";
 									}
 								}
 							}
@@ -212,9 +212,9 @@ $(document).ready(function() {
 						if(typeof img_src != 'undefined') {
 							$(".beer-container").find(".beer"+i).find("h1").after($(img));
 						}
-						else {
-							$(".beer-container").find(".beer"+i).find("h1").after("<img class='beer-img' src='assets/img/placeholder.png'>");
-						}
+						// else {
+						// 	$(".beer-container").find(".beer"+i).find("h1").after("<img class='beer-img' src='assets/img/placeholder.png'>");
+						// }
 					});
 				}
 			});
