@@ -18,7 +18,7 @@
       src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDunD4E6OfczKLeAQNEbQLwPZMBczKsAdI&sensor=false">
     </script>
     <script type="text/javascript">
-  function initialize() {
+  function initializegpa() {
         var mapOptions = {
           zoom: 8,
           center: new google.maps.LatLng(43.871754, -72.451472),
@@ -69,14 +69,14 @@
         // Origins, anchor positions and coordinates of the marker
         // increase in the X direction to the right and in
         // the Y direction down.
-        var image = new google.maps.MarkerImage('images/brewery2.png',
+        var image = new google.maps.MarkerImage('assets/img/brewery2.png',
             // This marker is 20 pixels wide by 32 pixels tall.
             new google.maps.Size(32, 37),
             // The origin for this image is 0,0.
             new google.maps.Point(0,0),
             // The anchor for this image is the base of the flagpole at 0,32.
             new google.maps.Point(0, 0));
-        var shadow = new google.maps.MarkerImage('images/brewery2.png',
+        var shadow = new google.maps.MarkerImage('assets/img/brewery2.png',
             // The shadow image is larger in the horizontal dimension
             // while the position and offset are the same as for the main image.
             new google.maps.Size(37, 32),
@@ -109,7 +109,7 @@
 </head> 
 
 	
-<body onload="initialize()"> 
+<body onload="initializegpa()"> 
 
 <!-- Start of first page: #one -->
 <div data-role="page" id="one">
@@ -117,10 +117,11 @@
 	<div data-role="header">
 		<h1>VT Brew Tours</h1>
 
-		<div class="ui-grid-a">
+		<div class="ui-grid-b">
 			<div class="ui-block-a"><a href="#one"><img src="assets/img/breweries_button2.png" /></a></div>
 			<div class="ui-block-b"><a href="#two"><img src="assets/img/beer_button2.png" /></a></div>
-		</div><!-- /grid-a -->
+      <div class="ui-block-c"><a href="#two"><img src="assets/img/map_Button.png" /></a></div>
+		</div><!-- /grid-b -->
 
 	</div><!-- /header -->
 
@@ -132,7 +133,7 @@
       <option selected="selected" value="nil">Select a brewery...</option>
     </select>
 		
-		<div id="map_canvas" style="width:30%; height:90%"></div>
+		<div id="map_canvas" style="width:385px; height:655px"></div>
 
 	</div><!-- /content -->
 	
@@ -148,10 +149,11 @@
 	<div data-role="header">
 		<h1>VT Brew Tours</h1>
 
-		<div class="ui-grid-a">
-			<div class="ui-block-a"><a href="#one"><img src="assets/img/breweries_button2.png" /></a></div>
-			<div class="ui-block-b"><a href="#two"><img src="assets/img/beer_button2.png" /></a></div>
-		</div><!-- /grid-a -->
+    <div class="ui-grid-b">
+      <div class="ui-block-a"><a href="#one"><img src="assets/img/breweries_button2.png" /></a></div>
+      <div class="ui-block-b"><a href="#two"><img src="assets/img/beer_button2.png" /></a></div>
+      <div class="ui-block-c"><a href="#two"><img src="assets/img/map_Button.png" /></a></div>
+    </div><!-- /grid-b -->
 
 	</div><!-- /header -->
 
