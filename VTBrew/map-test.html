@@ -1,22 +1,19 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html>
-
-<head>
-	<meta charset="utf-8">
-	    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+      <link rel="stylesheet" href="assets/css/jquery.mobile-1.2.0.css" />
+  <script src="assets/js/jquery.js"></script>
+  <script src="assets/js/jquery.mobile-1.2.0.js"></script>
     <style type="text/css">
       html { height: 100% }
       body { height: 100%; margin: 0; padding: 0 }
-    </style> 
-	<title>VT Brew Tour</title> 
-	<link rel="stylesheet" href="assets/css/jquery.mobile-1.2.0.css" />
-	<script src="assets/js/jquery.js"></script>
-	<script src="assets/js/jquery.mobile-1.2.0.js"></script>
-	<script type="text/javascript"
+    </style>
+    <script type="text/javascript"
       src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDunD4E6OfczKLeAQNEbQLwPZMBczKsAdI&sensor=false">
     </script>
     <script type="text/javascript">
-  function initialize() {
+  function initializegpa() {
         var mapOptions = {
           zoom: 8,
           center: new google.maps.LatLng(43.871754, -72.451472),
@@ -104,93 +101,8 @@
         }
       }
       </script>
-</head> 
-
-	
-<body onload="initialize()"> 
-
-<!-- Start of first page: #one -->
-<div data-role="page" id="one">
-
-	<div data-role="header">
-		<h1>VT Brew Tours</h1>
-
-		<div class="ui-grid-a">
-			<div class="ui-block-a"><a href="#one"><img src="assets/img/breweries_button2.png" /></a></div>
-			<div class="ui-block-b"><a href="#two"><img src="assets/img/beer_button2.png" /></a></div>
-		</div><!-- /grid-a -->
-
-	</div><!-- /header -->
-
-	<div data-role="content" >	
-		<h2>One</h2>
-		
-		<p>I have an <code>id</code> of "one" on my page container. I'm first in the source order so I'm shown when the page loads.</p>	
-		
-		<p>This is a multi-page boilerplate template that you can copy to build your first jQuery Mobile page. This template contains multiple "page" containers inside, unlike a <a href="page-template.html"> single page template</a> that has just one page within it.</p>	
-		<p>Just view the source and copy the code to get started. All the CSS and JS is linked to the jQuery CDN versions so this is super easy to set up. Remember to include a meta viewport tag in the head to set the zoom level.</p>
-		<p>You link to internal pages by referring to the <code>id</code> of the page you want to show. For example, to <a href="#two" >link</a> to the page with an <code>id</code> of "two", my link would have a <code>href="#two"</code> in the code.</p>		
-		
-		<div id="map_canvas" style="width:30%; height:90%"></div>
-
-	</div><!-- /content -->
-	
-	<div data-role="footer">
-		<h4>Page Footer</h4>
-	</div><!-- /footer -->
-</div><!-- /page one -->
-
-
-<!-- Start of second page: #two -->
-<div data-role="page" id="two">
-
-	<div data-role="header">
-		<h1>VT Brew Tours</h1>
-
-		<div class="ui-grid-a">
-			<div class="ui-block-a"><a href="#one"><img src="assets/img/breweries_button2.png" /></a></div>
-			<div class="ui-block-b"><a href="#two"><img src="assets/img/beer_button2.png" /></a></div>
-		</div><!-- /grid-a -->
-
-	</div><!-- /header -->
-
-	<div data-role="content">	
-		<h2>Two</h2>
-		<p>I have an id of "two" on my page container. I'm the second page container in this multi-page template.</p>	
-		<p>Notice that the theme is different for this page because we've added a few <code>data-theme</code> swatch assigments here to show off how flexible it is. You can add any content or widget to these pages, but we're keeping these simple.</p>
-		
-				<div onload="initialize()">
-    <div id="map_canvas"></div>
-  </div>
-
-	</div><!-- /content -->
-	
-	<div data-role="footer">
-		<h4>Page Footer</h4>
-	</div><!-- /footer -->
-</div><!-- /page two -->
-
-
-
-<!-- Start of: #popup 
-<p><a href="#popup" data-role="button" data-rel="dialog" data-transition="pop">Show page "popup" (as a dialog)</a></p>
-
-<div data-role="page" id="popup">
-
-	<div data-role="header" data-theme="e">
-		<h1>Dialog</h1>
-	</div> --><!-- /header -->
-<!--
-	<div data-role="content" data-theme="d">	
-		<h2>Popup</h2>
-		<p>I have an id of "popup" on my page container and only look like a dialog because the link to me had a <code>data-rel="dialog"</code> attribute which gives me this inset look and a <code>data-transition="pop"</code> attribute to change the transition to pop. Without this, I'd be styled as a normal page.</p>		
-		<p><a href="#one" data-rel="back" data-role="button" data-inline="true" data-icon="back">Back to page "one"</a></p>	
-	</div> --><!-- /content --><!--
-	
-	<div data-role="footer">
-		<h4>Page Footer</h4> -->
-	<!-- </div> /footer -->
-<!--</div> /page popup -->
-
-</body>
+  </head>
+  <body onload="initializegpa()">
+    <div id="map_canvas" style="width:385px; height:655px"></div>
+  </body>
 </html>
