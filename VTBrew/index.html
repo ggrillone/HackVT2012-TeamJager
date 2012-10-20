@@ -111,7 +111,9 @@
 	
 <body onload="initializegpa()"> 
 
-<!-- Start of first page: #one -->
+<!--
+  Home page
+-->
 <div data-role="page" id="one">
 
 	<div data-role="header">
@@ -127,14 +129,6 @@
 
 	<div data-role="content" >	
 		<h2>One</h2>
-		<a href="#two" >Two</a>
-
-    <select id="brewery-list">
-      <option value="nil">Select a brewery...</option>
-    </select>
-		
-		<div id="map_canvas" style="width:385px; height:655px"></div>
-
 	</div><!-- /content -->
 	
 	<div data-role="footer">
@@ -142,9 +136,30 @@
 	</div><!-- /footer -->
 </div><!-- /page one -->
 
+<!--
+  Brewery page with brewery select list
 
-<!-- Start of second page: #two -->
-<div data-role="page" id="two">
+-->
+<div data-role="page" id="brewery-list">
+  <div data-role="header">
+  </div>
+
+  <div data-role="content"> 
+    <select id="brewery-list">
+      <option value="nil">Select a brewery...</option>
+    </select>
+  </div>
+
+  <div data-role="footer">
+    <h4>Page Footer</h4>
+  </div><!-- /footer -->
+</div>
+
+<!-- 
+  Brewery page that lists individual breweries
+
+-->
+<div data-role="page" id="breweries">
 
 	<div data-role="header">
 		<h1>VT Brew Tours</h1>
@@ -181,7 +196,42 @@
 	</div><!-- /footer -->
 </div><!-- /page two -->
 
+<!--
+  Beer page with beer select list
 
+
+-->
+<div data-role="page" id="beer-list">
+  <div data-role="header">
+  </div>
+
+  <div data-role="content"> 
+    <select>
+      <option value="nil">Select a beer...</option>
+    </select>
+  </div>
+
+  <div data-role="footer">
+    <h4>Page Footer</h4>
+  </div><!-- /footer -->
+</div>
+
+<!--
+  Beer page list all beers for
+  a specific brewery
+
+-->
+<div data-role="page" id="beers">
+  <div data-role="header">
+  </div>
+
+  <div data-role="content"> 
+  </div>
+
+  <div data-role="footer">
+    <h4>Page Footer</h4>
+  </div><!-- /footer -->
+</div>
 
 <!-- Start of: #popup 
 <p><a href="#popup" data-role="button" data-rel="dialog" data-transition="pop">Show page "popup" (as a dialog)</a></p>
