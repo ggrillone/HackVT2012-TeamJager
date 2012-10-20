@@ -6571,3 +6571,125 @@ Served asset /application.js - 304 Not Modified (0ms)
 
 Started GET "/assets/ajax-loader.gif" for 127.0.0.1 at 2012-10-20 01:39:38 -0400
 Served asset /ajax-loader.gif - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-20 01:55:09 -0400
+Connecting to database specified by database.yml
+Processing by BreweryController#index as HTML
+  [1m[36mBrewery Load (0.4ms)[0m  [1mSELECT "breweries".* FROM "breweries" [0m
+  Rendered brewery/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 76ms (Views: 33.1ms | ActiveRecord: 12.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-20 01:55:09 -0400
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/brewery.css?body=1" for 127.0.0.1 at 2012-10-20 01:55:09 -0400
+Served asset /brewery.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-20 01:55:09 -0400
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-20 01:55:09 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/vendor/jquery.xdomainajax.js?body=1" for 127.0.0.1 at 2012-10-20 01:55:09 -0400
+Served asset /vendor/jquery.xdomainajax.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/brewery.js?body=1" for 127.0.0.1 at 2012-10-20 01:55:09 -0400
+Served asset /brewery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-20 01:55:09 -0400
+Served asset /application.js - 304 Not Modified (20ms)
+
+
+Started GET "/assets/ajax-loader.gif" for 127.0.0.1 at 2012-10-20 01:55:10 -0400
+Served asset /ajax-loader.gif - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-20 01:55:51 -0400
+Processing by BreweryController#index as HTML
+  [1m[35mBrewery Load (0.3ms)[0m  SELECT "breweries".* FROM "breweries" 
+  Rendered brewery/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-20 01:55:51 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-20 01:55:51 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/brewery.js?body=1" for 127.0.0.1 at 2012-10-20 01:55:51 -0400
+Served asset /brewery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-20 01:55:51 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/brewery.css?body=1" for 127.0.0.1 at 2012-10-20 01:55:51 -0400
+Served asset /brewery.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/vendor/jquery.xdomainajax.js?body=1" for 127.0.0.1 at 2012-10-20 01:55:51 -0400
+Served asset /vendor/jquery.xdomainajax.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-20 01:55:51 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ajax-loader.gif" for 127.0.0.1 at 2012-10-20 01:55:51 -0400
+Served asset /ajax-loader.gif - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-20 02:19:50 -0400
+Processing by BreweryController#index as HTML
+  [1m[36mBrewery Load (0.2ms)[0m  [1mSELECT "breweries".* FROM "breweries" [0m
+  Rendered brewery/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-20 02:19:50 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/brewery.css?body=1" for 127.0.0.1 at 2012-10-20 02:19:50 -0400
+Served asset /brewery.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-20 02:19:50 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/brewery.js?body=1" for 127.0.0.1 at 2012-10-20 02:19:50 -0400
+Served asset /brewery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-20 02:19:50 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/vendor/jquery.xdomainajax.js?body=1" for 127.0.0.1 at 2012-10-20 02:19:50 -0400
+Served asset /vendor/jquery.xdomainajax.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-20 02:19:50 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ajax-loader.gif" for 127.0.0.1 at 2012-10-20 02:19:50 -0400
+Served asset /ajax-loader.gif - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (2.9ms)[0m  [1mCOPY breweries(name, db_id) FROM '/Users/gregorygrillone/Documents/HackVT2012-TeamJager/test/data/Breweries.csv' USING DELIMITERS ','[0m
