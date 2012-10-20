@@ -41,7 +41,7 @@
 	font-weight: bold;
 }
 .ui-bar-a a.ui-link:visited {
-    color: #333 /*{a-bar-link-visited}*/;
+    color: #fff /*{a-bar-link-visited}*/;
 }
 .ui-bar-a a.ui-link:hover {
 	color: #333 /*{a-bar-link-hover}*/;
@@ -1711,7 +1711,7 @@ div.ui-mobile-viewport { overflow-x: hidden; }
 }
 /* content configurations. */
 .ui-grid-a, .ui-grid-b, .ui-grid-c, .ui-grid-d { overflow: hidden; text-align: center; }
-.ui-block-a, .ui-block-b, .ui-block-c, .ui-block-d, .ui-block-e { margin: 0; padding: 0; border: 0; display: inline; min-height: 1px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; box-sizing: border-box; }
+.ui-block-a, .ui-block-b, .ui-block-c, .ui-block-d, .ui-block-e { margin: 0; padding: 0; border: 0; display: inline; width: 100% min-height: 1px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; box-sizing: border-box; }
 /* grid solo: 100 - single item fallback */
 .ui-grid-solo .ui-block-a { display: block; float: none; }
 /* Lower percentages for older browsers (i.e. IE7) to prevent wrapping. -.5px to fix BB5 wrap issue. */
