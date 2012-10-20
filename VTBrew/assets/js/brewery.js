@@ -17,11 +17,12 @@ $(document).ready(function() {
 		"HAszUa", "VEY3Xa", "9s770G"
 	];
 
-	// Append breweries and ids to select list
+	// Append breweries to select lists
 	$.each(brewery_names, function(i, val) {
 		var option = "<option value='"+brewery_ids[i]+"'>" + val + "</option>";
 
 		$("#brewery-select-list").append(option);
+		$("#brewery-select-list2").append(option);
 	});
 
 	/*
@@ -46,8 +47,7 @@ $(document).ready(function() {
 					$("#json").html($(res.responseText));
 					var content = $("#json").find('p').html();
 					var json_object = $.parseJSON(content); // data stores all json data objects
-					console.log(json_object);
-					$("#structure").html("");
+					// console.log(json_object);
 
 					$("#loader").hide();
 
@@ -67,23 +67,18 @@ $(document).ready(function() {
 											// Loop deeper into images object
 											if(k == "images") {
 												// Get all label images
-												// var label_row = "<tr><td>" + k + "</td><td>";
 												$.each(v, function(k2,v2) {
 													if(k2 == "medium") {
 														// image icon
-														// label_row += v2;
 														$(".brewery-img").attr("src",v2);
 													}
 												});
-												// label_row += "</td></tr>";
-												// $("#structure").append(label_row);
 											}
 											else {
 												// description, established, name
 												if(k == "description") { $(".brewery-description").html(v); }
 												if(k == "established") { $(".brewery-established").html("Established: " + v); }
 												if(k == "name") { $(".brewery-name").html(v); }
-												// $("#structure").append("<tr><td>" + k + "</td><td>" + v + "</td></tr>");
 											}
 										}
 									});
@@ -96,7 +91,6 @@ $(document).ready(function() {
 									if(key == "phone") { $(".brewery-phone").html("Phone: " + value); }
 									if(key == "website") { $(".brewery-website").html("Website: " + value); }
 									if(key == "locality") { $(".brewery-city").html(value + ", VT"); }
-									// $("#structure").append("<tr><td>" + key + "</td><td>" + value + "</td></tr>");
 								}
 							}
 						});
@@ -110,93 +104,117 @@ $(document).ready(function() {
 				url: 'http://api.brewerydb.com/v2/brewery/' + brewery_id + '/beers/?key=7c7a3e4d800c8745829f95c338570201',
 				type: 'GET',
 				success: function(res) {
-					$("#json").html($(res.responseText));
-					var content = $("#json").find('p').html();
+					$("#json2").html($(res.responseText));
+					var content = $("#json2").find('p').html();
 					var json_object = $.parseJSON(content); // data stores all json data objects
-					console.log(json_object);
-					$("#structure").html("");
+					// console.log(json_object);
+					$(".beer-container").html("");
 
-					$("#loader").hide();
+					$("#loader2").hide();
 
+					var i = 0;
 					// Loops through all beers for a brewery
 					$(json_object["data"]).each(function(index, element) {
+						i++;
+						var new_beer = "<div class='beer"+i+"' style='margin-bottom:25px;'>";
+
 						$.each(element, function(key,value) {
 							
-							if(key == "labels" || key == "availableId" || key == "glasswareId"
-								|| key == "name" || key == "id" || key == "description"
-								|| key == "abv") {
+							if(key == "labels" || key == "availableId" || key == "glasswareId" || key == "name" || key == "description" || key == "abv") {
+
 
 								if(key == "labels") {
 
 									// Get all label images
-									var label_row = "<tr><td>" + key + "</td><td>";
 									$.each(value, function(k,v) {
-										label_row += v + "<br/>";
+										// medium label
+										if(k == "medium") {
+											new_beer += "<img class='beer-img' src='"+v+"'>";
+										}
 									});
-									label_row += "</td></tr>";
-									$("#structure").append(label_row);
 								}
 								// Availability Yes
 								else if(key == "availableId" && value == "1") {
-									$("#structure").append("<tr><td>Available</td><td>Yes</td></tr>");
+									new_beer += "<div class='beer-available'>Available: Yes</div>";
 								}
 								// Availability No
 								else if(key == "availableId" && value == "2") {
-									$("#structure").append("<tr><td>Available</td><td>No</td></tr>");
+									new_beer += "<div class='beer-available'>Available: No</div>";
 								}
 								// Glassware Flute 1
 								else if(key == "glasswareId" && value == "1") {
-									$("#structure").append("<tr><td>Glassware</td><td>Flute</td></tr>");
+									new_beer += "<div class='beer-glassware'>Glassware: Flute</div>";
 								}
 								// Glassware Goblet 2
 								else if(key == "glasswareId" && value == "2") {
-									$("#structure").append("<tr><td>Glassware</td><td>Goblet</td></tr>");
+									new_beer += "<div class='beer-glassware'>Glassware: Goblet</div>";
 								}
 								// Glassware Mug 3
 								else if(key == "glasswareId" && value == "3") {
-									$("#structure").append("<tr><td>Glassware</td><td>Mug</td></tr>");
+									new_beer += "<div class='beer-glassware'>Glassware: Mug</div>";
 								}
 								// Glassware Pilsner 4
 								else if(key == "glasswareId" && value == "4") {
-									$("#structure").append("<tr><td>Glassware</td><td>Pilsner</td></tr>");
+									new_beer += "<div class='beer-glassware'>Glassware: Pilsner</div>";
 								}
 								// Glassware Pint 5
 								else if(key == "glasswareId" && value == "5") {
-									$("#structure").append("<tr><td>Glassware</td><td>Pint</td></tr>");
+									new_beer += "<div class='beer-glassware'>Glassware: Pint</div>";
 								}
 								// Glassware Snifter 6
 								else if(key == "glasswareId" && value == "6") {
-									$("#structure").append("<tr><td>Glassware</td><td>Snifter</td></tr>");
+									new_beer += "<div class='beer-glassware'>Glassware: Snifter</div>";
 								}
 								// Glassware Stange 7
 								else if(key == "glasswareId" && value == "7") {
-									$("#structure").append("<tr><td>Glassware</td><td>Stange</td></tr>");
+									new_beer += "<div class='beer-glassware'>Glassware: Stange</div>";
 								}
 								// Glassware Tulip 8
 								else if(key == "glasswareId" && value == "8") {
-									$("#structure").append("<tr><td>Glassware</td><td>Tulip</td></tr>");
+									new_beer += "<div class='beer-glassware'>Glassware: Tulip</div>";
 								}
 								// Glassware Weizen 9
 								else if(key == "glasswareId" && value == "9") {
-									$("#structure").append("<tr><td>Glassware</td><td>Weizen</td></tr>");
+									new_beer += "<div class='beer-glassware'>Glassware: Weizen</div>";
 								}
 								// Glassware Oversized Wine Glass 10
 								else if(key == "glasswareId" && value == "10") {
-									$("#structure").append("<tr><td>Glassware</td><td>Oversized Wine Glass</td></tr>");
+									new_beer += "<div class='beer-glassware'>Glassware: Oversized Wine Glass</div>";
 								}
 								// Glassware Willi 13
 								else if(key == "glasswareId" && value == "13") {
-									$("#structure").append("<tr><td>Glassware</td><td>Willi</td></tr>");
+									new_beer += "<div class='beer-glassware'>Glassware: Willi</div>";
 								}
 								// Glassware Thistle 14
 								else if(key == "glasswareId" && value == "14") {
-									$("#structure").append("<tr><td>Glassware</td><td>Thistle</td></tr>");
+									new_beer += "<div class='beer-glassware'>Glassware: Thistle</div>";
 								}
 								else {
-									$("#structure").append("<tr><td>" + key + "</td><td>" + value + "</td></tr>");
+									// abv, description, name
+									if(key == "abv") {
+										new_beer += "<div class='beer-abv'>Alcohol By Volume: " + value + "</div>";
+									}
+									else if(key == "description") {
+										new_beer += "<div class='beer-description'>" + value + "</div>";
+									}
+									else if(key == "name") {
+										new_beer += "<h1 class='beer-name'>" + value + "</h1>";
+									}
 								}
 							}
+
 						});
+						new_beer += "</div>";
+						$(".beer-container").append(new_beer);
+						var img = $('.beer-container').find(".beer"+i).find('img.brewery-img');
+						var img_src = $('.beer-container').find(".beer"+i).find('img.brewery-img').attr('src');
+						
+						if(typeof img_src != 'undefined') {
+							$(".beer-container").find(".beer"+i).find("h1").after($(img));
+						}
+						else {
+							$(".beer-container").find(".beer"+i).find("h1").after("<img class='beer-img' src='assets/img/placeholder.png'>");
+						}
 					});
 				}
 			});
@@ -206,10 +224,20 @@ $(document).ready(function() {
 	// on change listener for brewery select list
 	$("#brewery-select-list").change(function() {
 		if($(this).val != 'nil') {
-
+			$("#loader").show();
 			var brew_id = $(this).val();
 			
 			getBeers(brew_id, "brewery");
+		}
+	});
+
+	// on change listener for brewery select list2 (beer)
+	$("#brewery-select-list2").change(function() {
+		if($(this).val != 'nil') {
+			$("#loader2").show();
+			var brew_id = $(this).val();
+			
+			getBeers(brew_id, "beer");
 		}
 	});
 
