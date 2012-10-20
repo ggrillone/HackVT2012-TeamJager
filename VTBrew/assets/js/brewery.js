@@ -41,7 +41,7 @@ $(document).ready(function() {
 		// If user searching for brewery
 		if(data_type == "brewery") {
 			$.ajax({
-				url: 'http://api.brewerydb.com/v2/brewery/' + brewery_id + '/locations/?key=7c7a3e4d800c8745829f95c338570201',
+				url: 'http://api.brewerydb.com/v2/brewery/' + brewery_id + '/locations/?key=75c487072c38fac9621fac0f4db26ca1',
 				type: 'GET',
 				success: function(res) {
 					$("#json").html($(res.responseText));
@@ -89,7 +89,7 @@ $(document).ready(function() {
 									if(key == "hoursOfOperation") { $(".brewery-hours").html("Hours: " + value); }
 									if(key == "locationTypeDisplay") { $(".brewery-type").html("Type: " + value); }
 									if(key == "phone") { $(".brewery-phone").html("Phone: " + value); }
-									if(key == "website") { $(".brewery-website").html("Website: " + value); }
+									if(key == "website") { $(".brewery-website").html("Website: <a target='_blank' href='"+value+"'>website</a>"); }
 									if(key == "locality") { $(".brewery-city").html(value + ", VT"); }
 								}
 							}
@@ -101,7 +101,7 @@ $(document).ready(function() {
 		// If user searching for beers
 		else if(data_type == "beer") {
 			$.ajax({
-				url: 'http://api.brewerydb.com/v2/brewery/' + brewery_id + '/beers/?key=7c7a3e4d800c8745829f95c338570201',
+				url: 'http://api.brewerydb.com/v2/brewery/' + brewery_id + '/beers/?key=75c487072c38fac9621fac0f4db26ca1',
 				type: 'GET',
 				success: function(res) {
 					$("#json2").html($(res.responseText));

@@ -114,11 +114,13 @@
             var infowindow = new google.maps.InfoWindow();
             var marker, i;
 
-            google.maps.event.addListener(marker, 'hover', (function(marker, i) {
+            google.maps.event.addListener(marker, 'click', (function(marker, i) {
               // console.log('marker: ' + marker + ' i: ' + i);
                   return function() {
-                    infowindow.setContent(brewery[i][0]);
-                    infowindow.open(map, marker);
+                    // var location = locations[i][0];
+                    // $("#location-name").html(location);
+                    // infowindow.setContent(brewery[i][0]);
+                    // infowindow.open(map, marker);
                   }
                 })(marker, i));
             }
@@ -181,6 +183,8 @@
 
   <div style="text-align:center;"><h2>Map!</h2><p>Please feel free to zoom in, out, and all around the locations of breweries in our interactive map! Hover your mouse over each item to get the brewery name.<div id="map_canvas" style="width:auto; height:655px; text-align:center;"></div>
   </div>
+
+  <h2 id="location-name"></h2>
     
   </div><!-- /content -->
   
@@ -204,7 +208,7 @@
 
   <div data-role="content"> 
       
-        <select id="brewery-select-list">
+        <select id="brewery-select-list" style="font-size:20px;">
           <option value="nil">Select a brewery...</option>
         </select>
     
@@ -252,7 +256,7 @@
 -->
 <div data-role="page" id="beer-list">
   <div data-role="header">
-    <h1><a href="#home">Select a Brewery to see their selection</a></h1>
+    <h1><a href="#home">VT Brew Tours</a></h1>
 
     <div class="ui-grid-b">
       <div class="ui-block-a"><a href="#brewery-list"><img src="assets/img/breweries_button2.png" /></a></div>
@@ -263,7 +267,7 @@
 
   <div data-role="content"> 
     <div data-role="content"> 
-      <select id="brewery-select-list2">
+      <select id="brewery-select-list2" style="font-size:20px;">
         <option value="nil">Select a brewery to check out their beer...</option>
       </select>
     </div>
