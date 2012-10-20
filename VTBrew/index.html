@@ -18,98 +18,116 @@
       src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDunD4E6OfczKLeAQNEbQLwPZMBczKsAdI&sensor=false">
     </script>
     <script type="text/javascript">
-  function initializegpa() {
-        var mapOptions = {
-          zoom: 8,
-          center: new google.maps.LatLng(43.871754, -72.451472),
-          mapTypeId: google.maps.MapTypeId.ROADMAP
-        }
-        var map = new google.maps.Map(document.getElementById('map_canvas'),
-                                      mapOptions);
-
-        setMarkers(map, breweries);
-      }
-
+    $(document).ready(function(){
       /**
-       * Data for the markers consisting of a name, a LatLng and a zIndex for
-       * the order in which these markers should display on top of each
-       * other.
-       */
-      var breweries = [
-        ['14th Star Brewing Co', 44.820144, -73.085734, 1],
-        ['Alchemist', 44.337189, -72.756027, 2],
-        ['Bobcat Cafe & Brewery', 44.1331567, -73.0784259, 3],
-        ['Fiddlehead Brewing Company', 44.366199, -73.232674, 4],
-        ['Brewery at Trapp Family Lodge', 44.465572, -72.7446439, 5],
-        ['Harpoon Brewery', 43.512997, -72.401527, 6],
-        ['Lawsons Finest Liquids', 44.113535, -72.85575, 7],
-        ['Long Trail', 43.589031, -72.659218, 8],
-        ['Magic Hat Brewing Company', 44.428405, -73.213148, 9],
-        ['McNeils Pub and Brewery', 42.851552, -72.560164, 10],
-        ['Northshire Brewery', 42.8844959, -73.2011993, 11],
-        ['Norwich Inn', 43.7151179, -72.308907, 12],
-        ['Otter Creek Brewing Co', 44.019665, -73.169251, 13],
-        ['Rock Art Brewery', 44.557791, -72.608085, 14],
-        ['Switchback', 44.45566, -73.219521, 15],
-        ['Three Needs', 44.477074, -73.211458, 16],
-        ['Trout River Brewing Co', 44.52877, -72.000969, 17],
-        ['Vermont Beer Co', 43.993102, -72.128526, 18],
-        ['Vermont Pub & Brewery', 44.477262, -73.214394, 19],
-        ['Zero Gravity', 44.476553, -73.214154, 20],
-        ['Drop-In Brewing Company', 44.000476, -73.149047, 21]
-      ];
+         * Data for the markers consisting of a name, a LatLng and a zIndex for
+         * the order in which these markers should display on top of each
+         * other.
+         */
+        var breweries = [
+          ['14th Star Brewing Co', 44.820144, -73.085734, 1],
+          ['Alchemist', 44.337189, -72.756027, 2],
+          ['Bobcat Cafe & Brewery', 44.1331567, -73.0784259, 3],
+          ['Fiddlehead Brewing Company', 44.366199, -73.232674, 4],
+          ['Brewery at Trapp Family Lodge', 44.465572, -72.7446439, 5],
+          ['Harpoon Brewery', 43.512997, -72.401527, 6],
+          ['Lawsons Finest Liquids', 44.113535, -72.85575, 7],
+          ['Long Trail', 43.589031, -72.659218, 8],
+          ['Magic Hat Brewing Company', 44.428405, -73.213148, 9],
+          ['McNeils Pub and Brewery', 42.851552, -72.560164, 10],
+          ['Northshire Brewery', 42.8844959, -73.2011993, 11],
+          ['Norwich Inn', 43.7151179, -72.308907, 12],
+          ['Otter Creek Brewing Co', 44.019665, -73.169251, 13],
+          ['Rock Art Brewery', 44.557791, -72.608085, 14],
+          ['Switchback', 44.45566, -73.219521, 15],
+          ['Three Needs', 44.477074, -73.211458, 16],
+          ['Trout River Brewing Co', 44.52877, -72.000969, 17],
+          ['Vermont Beer Co', 43.993102, -72.128526, 18],
+          ['Vermont Pub & Brewery', 44.477262, -73.214394, 19],
+          ['Zero Gravity', 44.476553, -73.214154, 20],
+          ['Drop-In Brewing Company', 44.000476, -73.149047, 21]
+        ];
 
-      function setMarkers(map, locations) {
-        // Add markers to the map
+    function initializegpa() {
+          var mapOptions = {
+            zoom: 8,
+            center: new google.maps.LatLng(43.871754, -72.451472),
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+          }
+          var map = new google.maps.Map(document.getElementById('map_canvas'),
+                                        mapOptions);
 
-        // Marker sizes are expressed as a Size of X,Y
-        // where the origin of the image (0,0) is located
-        // in the top left of the image.
-
-        // Origins, anchor positions and coordinates of the marker
-        // increase in the X direction to the right and in
-        // the Y direction down.
-        var image = new google.maps.MarkerImage('assets/img/brewery2.png',
-            // This marker is 20 pixels wide by 32 pixels tall.
-            new google.maps.Size(32, 37),
-            // The origin for this image is 0,0.
-            new google.maps.Point(0,0),
-            // The anchor for this image is the base of the flagpole at 0,32.
-            new google.maps.Point(0, 0));
-        var shadow = new google.maps.MarkerImage('assets/img/brewery2.png',
-            // The shadow image is larger in the horizontal dimension
-            // while the position and offset are the same as for the main image.
-            new google.maps.Size(37, 32),
-            new google.maps.Point(0,0),
-            new google.maps.Point(0,0));
-            // Shapes define the clickable region of the icon.
-            // The type defines an HTML &lt;area&gt; element 'poly' which
-            // traces out a polygon as a series of X,Y points. The final
-            // coordinate closes the poly by connecting to the first
-            // coordinate.
-        var shape = {
-            coord: [1, 1, 1, 37, 32, 37, 32 , 1],
-            type: 'poly'
-        };
-        for (var i = 0; i < locations.length; i++) {
-          var brewery = locations[i];
-          var myLatLng = new google.maps.LatLng(brewery[1], brewery[2]);
-          var marker = new google.maps.Marker({
-              position: myLatLng,
-              map: map,
-              shadow: shadow,
-              icon: image,
-              shape: shape,
-              title: brewery[0],
-              zIndex: brewery[3]
-          });
+          setMarkers(map, breweries);
         }
-      }
+
+        
+
+        function setMarkers(map, locations) {
+          // Add markers to the map
+
+          // Marker sizes are expressed as a Size of X,Y
+          // where the origin of the image (0,0) is located
+          // in the top left of the image.
+
+          // Origins, anchor positions and coordinates of the marker
+          // increase in the X direction to the right and in
+          // the Y direction down.
+          var image = new google.maps.MarkerImage('assets/img/brewery2.png',
+              // This marker is 20 pixels wide by 32 pixels tall.
+              new google.maps.Size(32, 37),
+              // The origin for this image is 0,0.
+              new google.maps.Point(0,0),
+              // The anchor for this image is the base of the flagpole at 0,32.
+              new google.maps.Point(0, 0));
+          var shadow = new google.maps.MarkerImage('assets/img/brewery2.png',
+              // The shadow image is larger in the horizontal dimension
+              // while the position and offset are the same as for the main image.
+              new google.maps.Size(37, 32),
+              new google.maps.Point(0,0),
+              new google.maps.Point(0,0));
+              // Shapes define the clickable region of the icon.
+              // The type defines an HTML &lt;area&gt; element 'poly' which
+              // traces out a polygon as a series of X,Y points. The final
+              // coordinate closes the poly by connecting to the first
+              // coordinate.
+          var shape = {
+              coord: [1, 1, 1, 37, 32, 37, 32 , 1],
+              type: 'poly'
+          };
+          for (var i = 0; i < locations.length; i++) {
+            var brewery = locations[i];
+            // console.log(brewery);
+            var myLatLng = new google.maps.LatLng(brewery[1], brewery[2]);
+            var marker = new google.maps.Marker({
+                position: myLatLng,
+                map: map,
+                shadow: shadow,
+                icon: image,
+                shape: shape,
+                title: brewery[0],
+                zIndex: brewery[3]
+            });
+            // console.log('title: ' + brewery[0] + ' z: ' + brewery[3]);
+            var infowindow = new google.maps.InfoWindow();
+            var marker, i;
+
+            google.maps.event.addListener(marker, 'click', (function(marker, i) {
+              // console.log('marker: ' + marker + ' i: ' + i);
+                  return function() {
+                    infowindow.setContent(brewery[i]);
+                    infowindow.open(map, marker);
+                  }
+                })(marker, i));
+            }
+        }
+
+        initializegpa();
+      });
       </script>
 </head> 
 
 	
-<body onload="initializegpa()"> 
+<body> 
 
 <!--
   Home page
