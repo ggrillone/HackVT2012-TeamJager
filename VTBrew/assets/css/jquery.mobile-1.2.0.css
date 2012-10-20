@@ -1152,6 +1152,9 @@ div.ui-mobile-viewport { overflow-x: hidden; }
 .ui-header .ui-btn-icon-notext { top: 6px; }
 .ui-header .ui-title, .ui-footer .ui-title { min-height: 1.1em; text-align: center; font-family: 'Merienda One', cursive; display: block; padding: 0; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; outline: 0 !important; }
 .ui-header .ui-title { font-size: 50px; }
+.ui-header .ui-title a, .ui-header .ui-title a:hover { font-size: 50px; color: #fff; text-decoration: none; }
+.ui-header .ui-title a:hover { opacity: 0.5; }
+
 .ui-footer .ui-title { margin: .6em 15px .8em; }
 /*content area*/
 .ui-content { border-width: 0; overflow: visible; overflow-x: hidden; padding: 15px; }
