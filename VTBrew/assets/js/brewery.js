@@ -19,7 +19,7 @@ $(document).ready(function() {
 
 	// Append breweries and ids to select list
 	$.each(brewery_names, function(i, val) {
-		var option = "<option value='#breweries."+brewery_ids[i]+"'>" + val + "</option>";
+		var option = "<option value='"+brewery_ids[i]+"'>" + val + "</option>";
 
 		$("#brewery-select-list").append(option);
 	});
@@ -67,23 +67,36 @@ $(document).ready(function() {
 											// Loop deeper into images object
 											if(k == "images") {
 												// Get all label images
-												var label_row = "<tr><td>" + k + "</td><td>";
+												// var label_row = "<tr><td>" + k + "</td><td>";
 												$.each(v, function(k2,v2) {
-													if(k2 == "icon") {
-														label_row += v2;
+													if(k2 == "medium") {
+														// image icon
+														// label_row += v2;
+														$(".brewery-img").attr("src",v2);
 													}
 												});
-												label_row += "</td></tr>";
-												$("#structure").append(label_row);
+												// label_row += "</td></tr>";
+												// $("#structure").append(label_row);
 											}
 											else {
-												$("#structure").append("<tr><td>" + k + "</td><td>" + v + "</td></tr>");
+												// description, established, name
+												if(k == "description") { $(".brewery-description").html(v); }
+												if(k == "established") { $(".brewery-established").html("Established: " + v); }
+												if(k == "name") { $(".brewery-name").html(v); }
+												// $("#structure").append("<tr><td>" + k + "</td><td>" + v + "</td></tr>");
 											}
 										}
 									});
 								}
 								else {
-									$("#structure").append("<tr><td>" + key + "</td><td>" + value + "</td></tr>");
+									// type, hours, phone, street address, city, website
+									if(key == "streetAddress") { $(".brewery-address").html("Address: " + value); }
+									if(key == "hoursOfOperation") { $(".brewery-hours").html("Hours: " + value); }
+									if(key == "locationTypeDisplay") { $(".brewery-type").html("Type: " + value); }
+									if(key == "phone") { $(".brewery-phone").html("Phone: " + value); }
+									if(key == "website") { $(".brewery-website").html("Website: " + value); }
+									if(key == "locality") { $(".brewery-city").html(value + ", VT"); }
+									// $("#structure").append("<tr><td>" + key + "</td><td>" + value + "</td></tr>");
 								}
 							}
 						});
@@ -191,12 +204,10 @@ $(document).ready(function() {
 	};
 
 	// on change listener for brewery select list
-	$("#brewery-list").change(function() {
+	$("#brewery-select-list").change(function() {
 		if($(this).val != 'nil') {
 
-			var url = $(this).val().split('.')[0];
-			var brew_id = $(this).val().split('.')[1];
-			window.location += url;
+			var brew_id = $(this).val();
 			
 			getBeers(brew_id, "brewery");
 		}
