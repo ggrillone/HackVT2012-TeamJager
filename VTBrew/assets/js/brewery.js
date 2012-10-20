@@ -19,7 +19,7 @@ $(document).ready(function() {
 
 	// Append breweries and ids to select list
 	$.each(brewery_names, function(i, val) {
-		var option = "<option value='#two."+brewery_ids[i]+"'>" + val + "</option>";
+		var option = "<option value='#breweries."+brewery_ids[i]+"'>" + val + "</option>";
 
 		$("#brewery-list").append(option);
 	});
@@ -46,7 +46,7 @@ $(document).ready(function() {
 					$("#json").html($(res.responseText));
 					var content = $("#json").find('p').html();
 					var json_object = $.parseJSON(content); // data stores all json data objects
-					// console.log(json_object);
+					console.log(json_object);
 					$("#structure").html("");
 
 					$("#loader").hide();
@@ -54,7 +54,38 @@ $(document).ready(function() {
 					// Loops through all beers for a brewery
 					$(json_object["data"]).each(function(index, element) {
 						$.each(element, function(key,value) {
-							console.log('Index: ' + index + ' Element: ' + element);
+
+							// Get necessary data
+							if(key == "locationTypeDisplay" || key == "hoursOfOperation" || key == "brewery"
+								|| key == "phone" || key == "streetAddress" || key == "locality"
+								|| key == "website") {
+
+								// Loop deeper into brewery object
+								if(key == "brewery") {
+									$.each(value, function(k,v) {
+										if(k == "images" || k == "description" || k == "established" || k == "name") {
+											// Loop deeper into images object
+											if(k == "images") {
+												// Get all label images
+												var label_row = "<tr><td>" + k + "</td><td>";
+												$.each(v, function(k2,v2) {
+													if(k2 == "icon") {
+														label_row += v2;
+													}
+												});
+												label_row += "</td></tr>";
+												$("#structure").append(label_row);
+											}
+											else {
+												$("#structure").append("<tr><td>" + k + "</td><td>" + v + "</td></tr>");
+											}
+										}
+									});
+								}
+								else {
+									$("#structure").append("<tr><td>" + key + "</td><td>" + value + "</td></tr>");
+								}
+							}
 						});
 					});
 				}
@@ -164,12 +195,10 @@ $(document).ready(function() {
 		if($(this).val != 'nil') {
 
 			var url = $(this).val().split('.')[0];
-			var brewery_id = $(this).val().split('.')[1];
+			var brew_id = $(this).val().split('.')[1];
 			window.location += url;
-
-			var brew_id = $(this).html();
-			// alert(brew_id);
-			// getBeers();
+			
+			getBeers(brew_id, "brewery");
 		}
 	});
 
