@@ -19,7 +19,7 @@ $(document).ready(function() {
 
 	// Append breweries and ids to select list
 	$.each(brewery_names, function(i, val) {
-		var option = "<option value='#two' data='"+brewery_ids[i]+"'>" + val + "</option>";
+		var option = "<option value='#two."+brewery_ids[i]+"'>" + val + "</option>";
 
 		$("#brewery-list").append(option);
 	});
@@ -39,7 +39,26 @@ $(document).ready(function() {
 
 		// If user searching for brewery
 		if(data_type == "brewery") {
-			
+			$.ajax({
+				url: 'http://api.brewerydb.com/v2/brewery/' + brewery_id + '/locations/?key=7c7a3e4d800c8745829f95c338570201',
+				type: 'GET',
+				success: function(res) {
+					$("#json").html($(res.responseText));
+					var content = $("#json").find('p').html();
+					var json_object = $.parseJSON(content); // data stores all json data objects
+					// console.log(json_object);
+					$("#structure").html("");
+
+					$("#loader").hide();
+
+					// Loops through all beers for a brewery
+					$(json_object["data"]).each(function(index, element) {
+						$.each(element, function(key,value) {
+							console.log('Index: ' + index + ' Element: ' + element);
+						});
+					});
+				}
+			});
 		}
 		// If user searching for beers
 		else if(data_type == "beer") {
@@ -143,7 +162,14 @@ $(document).ready(function() {
 	// on change listener for brewery select list
 	$("#brewery-list").change(function() {
 		if($(this).val != 'nil') {
-			window.location += $(this).val();
+
+			var url = $(this).val().split('.')[0];
+			var brewery_id = $(this).val().split('.')[1];
+			window.location += url;
+
+			var brew_id = $(this).html();
+			// alert(brew_id);
+			// getBeers();
 		}
 	});
 
