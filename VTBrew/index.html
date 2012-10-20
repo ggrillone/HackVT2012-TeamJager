@@ -169,7 +169,7 @@
 
 
 <!--
-  Brewery page with brewery select list
+  Brewery page 
 
 -->
 <div data-role="page" id="brewery-list">
@@ -189,55 +189,48 @@
     </select>
   </div>
 
+  <div id="loader" style="margin: 0 auto;width:100px;display:none;">
+    <img src="assets/img/ajax-loader.gif">
+  </div>
+
+  <section>
+    <header>
+      <img src="" class="brewery-img" style="float:left;">
+      <h1 class="brewery-name"></h1>
+    </header>
+
+    <p clas="brewery-info">
+      <span class="brewery-established"></span>
+      <br/>
+      <span class="brewery-type"></span>
+    </p>
+
+    <br/>
+
+    <p class="brewery-more-info">
+      <address>
+        <span class="brewery-address"></span>
+        <span class="brewery-city"></span>
+        <br/>
+        <span class="brewery-phone"></span>
+      </address>
+      <br/>
+      <div class="brewery-hours"></div><br/>
+      <div class="brewery-website"></div><br/>
+      <div class="brewery-description"></div>
+    </p>
+  </section>
+
+  <p id="json" style="display:none;"></p>
+
   <div data-role="footer">
     <h4>Page Footer</h4>
   </div><!-- /footer -->
-</div><!-- end brewery select list -->
-
-<!-- 
-  Brewery page that lists individual breweries
-
--->
-<div data-role="page" id="breweries">
-
-	<div data-role="header">
-		<h1>VT Brew Tours</h1>
-
-    <div class="ui-grid-b">
-      <!-- new grid here -->
-      <div class="ui-block-a"><a href="#brewery-list"><img src="assets/img/breweries_button2.png" /></a></div>
-      <div class="ui-block-b"><a href="#beer-list"><img src="assets/img/beer_button2.png" /></a></div>
-      <div class="ui-block-c"><a href="#map"><img src="assets/img/map_Button.png" /></a></div>
-    </div><!-- /grid-b -->
-
-	</div><!-- /header -->
-
-	<div data-role="content">	
-		<h2>Breweries</h2>
-		
-    <div id="loader" style="margin: 0 auto;width:100px;display:none;">
-      <img src="assets/img/ajax-loader.gif">
-    </div>
-
-    <table id="structure">
-
-    </table>
-
-    <p id="json" style="display:none;"></p>
-		
-		<div onload="initialize()">
-    <div id="map_canvas"></div>
-  </div>
-
-	</div><!-- /content -->
-	
-	<div data-role="footer">
-		<h4>Page Footer</h4>
-	</div><!-- /footer -->
 </div><!-- end brewery page -->
 
+
 <!--
-  Beer page with beer select list
+  Beer page
 
 
 -->
@@ -253,39 +246,27 @@
   </div>
 
   <div data-role="content"> 
-    <select>
-      <option value="nil">Select a brewery to check out their beer...</option>
-    </select>
-  </div>
+    <div data-role="content"> 
+      <select id="brewery-select-list2">
+        <option value="nil">Select a brewery to check out their beer...</option>
+      </select>
+    </div>
 
-  <div data-role="footer">
-    <h4>Page Footer</h4>
-  </div><!-- /footer -->
-</div><!-- end beer select list -->
+    <div id="loader2" style="margin: 0 auto;width:100px;display:none;">
+      <img src="assets/img/ajax-loader.gif">
+    </div>
 
-<!--
-  Beer page list all beers for
-  a specific brewery
+    <div class="beer-container">
+    </div>
 
--->
-<div data-role="page" id="beers">
-  <div data-role="header">
-    <h1>Beers</h1>
-
-    <div class="ui-grid-b">
-      <div class="ui-block-a"><a href="#brewery-list"><img src="assets/img/breweries_button2.png" /></a></div>
-      <div class="ui-block-b"><a href="#beer-list"><img src="assets/img/beer_button2.png" /></a></div>
-      <div class="ui-block-c"><a href="#map"><img src="assets/img/map_Button.png" /></a></div>
-    </div><!-- /grid-b -->
-  </div>
-
-  <div data-role="content"> 
+    <p id="json2" style="display:none;"></p>
   </div>
 
   <div data-role="footer">
     <h4>Page Footer</h4>
   </div><!-- /footer -->
 </div><!-- end beer page -->
+
 
 <!-- Start of: #popup 
 <p><a href="#popup" data-role="button" data-rel="dialog" data-transition="pop">Show page "popup" (as a dialog)</a></p>
